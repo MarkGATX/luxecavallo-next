@@ -16,6 +16,9 @@
     align-items: center;
     justify-content: flex-start;
     order: 1;
+    & p {
+        font-size:.7em;
+    }
 }
 
 .burgerContainerHidden {
@@ -47,6 +50,7 @@
     height: 100dvh;
     width: 200px;
     /* padding: 1em 0 0 1.5em; */
+    opacity:0;
 
 }
 
@@ -108,13 +112,13 @@
     & ul {
         list-style-type: none;
         width: 100%;
-        margin:.5em 0 0 0;
+        margin:.5em 0 .5em 0;
 
         & li {
             /* margin: .5em 0; */
             width: 100%;
             padding:.5em 0 .5em 1em;
-            transition:all .3s;
+            transition:all 1s;
         }
 
         & li:hover {

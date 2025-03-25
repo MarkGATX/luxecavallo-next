@@ -2,7 +2,7 @@
 
 // import cavaleLogo from '@/public/images/cavale_logo.svg'
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef} from "react";
 import { useMenuContext } from '@/providers/menuContext/menuContext';
 // import { memo } from "react";
 import Image from 'next/image';
@@ -12,26 +12,16 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(Flip);
 
-const sideWidth = 200;
-let drawerWidth = 200;
-// const menuItems = [{ 'Home': HomeIcon }, { 'Men': MaleIcon }, { 'Women': FemaleIcon }, { 'Accessories': DiamondIcon }, { 'Houseware': BlenderIcon }]
-// const contactItems = [{ 'Sizing': StraightenIcon }, { 'About': InfoIcon }, { 'Contact': CallIcon }]
-
 
 export default function HeaderDesktop() {
-    // const [currentDrawer, setCurrentDrawer] = useState(false);
-    // const [menuAction, setMenuAction] = useState('Open')
+
     const { isMenuOpen, toggleMenu } = useMenuContext();
-    const sideContrastText = useRef();
-    const mainContrastText = useRef();
-    const sideContrastHorse = useRef();
-    const mainContrastHorse = useRef();
-    const burger = useRef();
     const topBrandingDrawerRef = useRef()
     const overflowBrandingDrawerRef = useRef()
     const burgerContainerRef = useRef()
     const hiddenBurgerContainerRef = useRef()
     const menuItemsContainerRef = useRef();
+    const desktopHeaderRef = useRef();
 
     const { contextSafe } = useGSAP();
 
@@ -53,10 +43,21 @@ export default function HeaderDesktop() {
 
     })
 
+    useGSAP(() => {
+           gsap.to(desktopHeaderRef.current, {
+                    opacity: 0},
+                    {
+                    opacity:1,
+                    duration: 1,
+                    ease: "power2.out",
+                    overwrite: "auto",
+                  });
+    })
+
     return (
         <>
-            <header className={styles.desktopHeader}>
-                <div className={styles.headerContainer}>
+            <header className={styles.desktopHeader} ref={desktopHeaderRef} >
+                <div className={styles.headerContainer} >
                     <div className={styles.burgerContainer} onClick={slideDrawer} ref={burgerContainerRef}>
                         <svg className='icon' viewBox="0 0 100 80" width="30" height="30">
                             <rect width="100" height="15" rx="10" />
@@ -64,11 +65,11 @@ export default function HeaderDesktop() {
                             <rect y="60" width="100" height="15" rx="10" />
                         </svg>
                         <p>
-                            {isMenuOpen ? 'Close' : 'Open'}
+                            {isMenuOpen ? 'close' : 'open'}
                         </p>
                     </div>
                     <div className={styles.brandingContainer} ref={topBrandingDrawerRef}>
-                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogoGold} alt='Luxe Cavallo Horse'>
+                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogoGold} alt='Luxe Cavallo Horse' >
                         </img>
                         <p className={`${styles.lightTitle} verticalText`}>LUXE CAVALLO</p>
                     </div>
@@ -86,7 +87,7 @@ export default function HeaderDesktop() {
                         </p>
                     </div>
                     <div className={styles.brandingContainer} ref={overflowBrandingDrawerRef}>
-                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogo} alt='Luxe Cavallo Horse'>
+                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogo} alt='Luxe Cavallo Horse' >
                         </img>
 
                         <p className={`${styles.darkTitle} verticalText`}>LUXE CAVALLO</p>
@@ -96,18 +97,18 @@ export default function HeaderDesktop() {
                 <div className={styles.menuItems} ref={menuItemsContainerRef}>
                     <div className={styles.menuList}>
                         <ul>
-                            <li>Home</li>
-                            <li>Men</li>
-                            <li>Women</li>
-                            <li>Accessories</li>
-                            <li>Houseware</li>
+                            <li>home</li>
+                            <li>men</li>
+                            <li>women</li>
+                            <li>accessories</li>
+                            <li>houseware</li>
                         </ul>
                     </div>
                     <div className={styles.menuList}>
                         <ul>
-                            <li>Sizing</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                            <li>sizing</li>
+                            <li>about</li>
+                            <li>contact</li>
 
                         </ul>
                     </div>

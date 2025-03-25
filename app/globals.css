@@ -4,7 +4,7 @@
   --lightText: oklch(98.21% 0.0141 74.43);
   --goldBackground: oklch(48.34% 0.0942 94.16);
   --goldText: oklch(91.29% 0.1149 93.38);
-  --darkText:oklch(22.26% 0.0099 88.8);
+  --darkText: oklch(22.26% 0.0099 88.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,7 +13,7 @@
     --lightBackground: oklch(98.21% 0.0141 74.43);
     --goldBackground: oklch(48.34% 0.0942 94.16);
     --goldText: oklch(91.29% 0.1149 93.38);
-    --darkText:oklch(22.26% 0.0099 88.8);
+    --darkText: oklch(22.26% 0.0099 88.8);
   }
 }
 
@@ -21,7 +21,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-oswald);
+  font-family: var(--font-nunito);
+  letter-spacing: 2px;
 }
 
 body {
@@ -44,12 +45,19 @@ a {
 }
 
 header {
-  color:var(--goldText);
+  color: var(--goldText);
   background: var(--darkBackground);
 }
 
-.icon rect{
-  fill:var(--goldText);
+#splashVid {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100dvh;
+}
+
+.icon rect {
+  fill: var(--goldText);
 }
 
 .verticalText {
