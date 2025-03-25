@@ -1,0 +1,201 @@
+.brandingContainer {
+    left: 67px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+    order: 2;
+}
+
+.burgerContainer {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    order: 1;
+}
+
+.burgerContainerHidden {
+    width: 40px;
+    visibility: hidden;
+    order: 1;
+
+}
+
+.cavalloLogoGold {
+    display: block;
+    width: 50%;
+    filter: invert(90%) sepia(71%) saturate(1219%) hue-rotate(310deg) brightness(114%) contrast(106%);
+    /* right: calc(50% * -.5); */
+    position: relative;
+
+}
+
+.cavalloLogo {
+    display: block;
+    width: 50%;
+    /* filter: invert(3%) sepia(5%) saturate(5910%) hue-rotate(5deg) brightness(94%) contrast(84%); */
+    /* left: calc(50% * -.5); */
+    position: relative;
+
+}
+
+.desktopHeader {
+    height: 100dvh;
+    width: 200px;
+    /* padding: 1em 0 0 1.5em; */
+
+}
+
+.drawerOpen {
+    order: 1;
+    left: -20px;
+
+}
+
+
+
+.headerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 1em 0 0 1.5em;
+    z-index: 3;
+    background: var(--darkBackground);
+}
+
+.headerTitleLight {
+    font-size: 3.5em !important;
+}
+
+.headerTitleDark {
+    font-size: 3.5em !important;
+}
+
+.lightTitle {
+    font-family: var(--font-federo);
+    font-size: 3.5em;
+}
+
+.menuItems {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--goldBackground);
+    color: var(--lightText);
+    width: 200px;
+    height: 100dvh;
+
+
+}
+
+.menuList {
+    width: 100%;
+
+    & ul {
+        list-style-type: none;
+        width: 100%;
+        margin:.5em 0 0 0;
+
+        & li {
+            /* margin: .5em 0; */
+            width: 100%;
+            padding:.5em 0 .5em 1em;
+            transition:all .3s;
+        }
+
+        & li:hover {
+            background-color: var(--darkBackground);
+            color: var(--goldText);
+        }
+    }
+}
+
+.menuOpen {
+    left: 200px;
+}
+
+.burgerOpen {
+    order: 2;
+    left: -10px;
+    position: relative;
+}
+
+.darkTitle {
+    font-family: var(--font-federo);
+    font-size: 3.5em;
+    color: var(--darkText);
+}
+
+.overflowContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0 0 1.5em;
+    z-index: 2;
+}
+
+@media screen and (max-height: 1200px) {
+    .headerTitleLight {
+        font-size: 2.9em !important;
+        left: 160px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 2.9em !important;
+        left: -35px !important;
+    }
+}
+
+@media screen and (max-height: 910px) {
+    .headerTitleLight {
+        font-size: 2.2em !important;
+        left: 173px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 2.2em !important;
+        left: -25px !important;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .headerTitleLight {
+        font-size: 1.8em !important;
+        left: 177px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 1.8em !important;
+        left: -21px !important;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .headerTitleLight {
+        font-size: 1.6em !important;
+        left: 180px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 1.6em !important;
+        left: -20px !important;
+    }
+}
