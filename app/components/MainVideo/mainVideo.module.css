@@ -18,3 +18,35 @@
   .video-wrapper.playing::before {
     opacity: 0;
   }
+
+  #splashVid {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100dvh;
+    transition:all .5 ease-in;
+  }
+
+  @media (width <=1740px) {
+    #splashVid {
+      left:-20dvw;
+    }
+  }
+
+  @media (width <=1024px) {
+    #splashVid {
+      left:-75dvw;
+    }
+  }
+
+  @media (width <=768px) {
+    #splashVid {
+      left:-100dvw;
+    }
+  }
+
+  @media (width <=500px) {
+    #splashVid {
+      left:-175dvw;
+    }
+  }

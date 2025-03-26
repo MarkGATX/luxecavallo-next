@@ -22,11 +22,13 @@ export default function MobileHeader() {
         toggleMenu();
         if (isMenuOpen) {
             gsap.to(menuItemsContainerRef.current, {
-                top: -100,
+                top: -200,
+                duration:1
             })
         } else {
             gsap.to(menuItemsContainerRef.current, {
                 top: 100,
+                duration:.8
             })
         }
     })

@@ -37,7 +37,7 @@ export default function MainVideo({ headerLoaded }) {
                 ref={videoRef}
                 muted
                 loop
-                id="splashVid"
+                id={styles.splashVid}
                 poster='/images/cavallo_bg_mov_fallback.webp'
             >
                 <source src='/images/cavallo_bg_vid6.webm' type="video/webm" />
