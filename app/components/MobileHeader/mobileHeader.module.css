@@ -1,0 +1,237 @@
+.burgerOpen {
+    order: 2;
+    left: -10px;
+    position: relative;
+}
+
+.cavalloLogoGoldMobile {
+    display: block;
+    filter: invert(90%) sepia(71%) saturate(1219%) hue-rotate(310deg) brightness(114%) contrast(106%);
+    position: relative;
+
+}
+
+.cavalloLogoMobile {
+    display: block;
+    position: relative;
+}
+
+
+.drawerOpen {
+    order: 1;
+    left: -20px;
+}
+
+.fullWidthLink {
+    display: block;
+}
+
+.logoImageContainer {
+    width:15%;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    & img {
+        object-fit: contain;
+    }
+}
+
+.menuItems {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--goldBackground);
+    color: var(--lightText);
+    width: 100dvw;
+    height: 100px;
+}
+
+.menuList {
+    width: 100dvw;
+
+    & ul {
+        list-style-type: none;
+        width: 100%;
+        margin: .5em 0 .5em 0;
+        display:flex;
+        flex-direction:row;
+
+        & li {
+            /* margin: .5em 0; */
+            width: 100%;
+            padding: .5em 0 .5em 1em;
+            transition: all 1s;
+        }
+
+        & li:hover {
+            background-color: var(--darkBackground);
+            color: var(--goldText);
+        }
+    }
+}
+
+.menuOpen {
+    top: 200px;
+}
+
+
+.mobileMenuList {
+    display: flex;
+    justify-content: center;
+}
+
+.mobileBrandingContainer {
+    width:85%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    top:50px;  
+}
+
+.mobileBurgerContainer {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & p {
+        text-align: center;
+        font-size: .6em;
+    }
+}
+
+.mobileBurgerContainerHidden {
+    width: 40px;
+    visibility: hidden;
+    order: 1;
+
+}
+
+
+
+
+
+
+.mobileHeader {
+    height: 100px;
+    width: 100dvw;
+    /* padding: 1em 0 0 1.5em; */
+    /* opacity:0; */
+}
+
+.mobileHeaderContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100dvw;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 1em 0 1em 0;
+    z-index: 3;
+    background: var(--darkBackground);
+}
+ 
+
+.mobileOverflowContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100dvw;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0 1em 0;
+
+}
+
+.mobileTitleLight {
+    font-family: var(--font-federo);
+    font-size: 2em !important;
+    width:80%;
+    text-align: center;
+}
+
+.mobileTitleDark {
+    font-family: var(--font-federo);
+    font-size: 2em !important;
+    width:80%;
+    text-align: center;
+    color: var(--darkText);
+}
+
+@media screen and (max-height: 1200px) {
+    .headerTitleLight {
+        font-size: 2.9em !important;
+        left: 160px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 2.9em !important;
+        left: -35px !important;
+    }
+}
+
+@media screen and (max-height: 910px) {
+    .headerTitleLight {
+        font-size: 2.2em !important;
+        left: 173px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 2.2em !important;
+        left: -25px !important;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .headerTitleLight {
+        font-size: 1.8em !important;
+        left: 177px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 1.8em !important;
+        left: -21px !important;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .headerTitleLight {
+        font-size: 1.6em !important;
+        left: 180px !important;
+    }
+
+    .headerTitleDark {
+        font-size: 1.6em !important;
+        left: -20px !important;
+    }
+}
+
+
+
+.mobileHeaderIcons {
+    width: .8em;
+    padding-right: .2em;
+
+}
+
+.mobileContactText span {
+    font-size: .7em !important;
+    padding-right: 1.2em;
+}
+
+.mobileProductText span {
+    font-size: .7em !important;
+    padding-right: 1.2em;
+}

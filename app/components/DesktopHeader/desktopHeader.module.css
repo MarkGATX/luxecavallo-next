@@ -50,7 +50,7 @@
     height: 100dvh;
     width: 200px;
     /* padding: 1em 0 0 1.5em; */
-    opacity:0;
+    /* opacity:0; */
 
 }
 
@@ -60,6 +60,17 @@
 
 }
 
+.fullWidthLink {
+    /* width:100%; */
+    display:block;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    text-decoration: none; */
+  }
 
 
 .headerContainer {

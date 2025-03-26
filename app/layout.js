@@ -31,6 +31,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <title>Luxe Cavallo</title>
+        <meta name="description" content="A fictional boutique."></meta>
+
+      </head>
       <MenuProvider>
         <SizeProvider>
           <body className={`${nunito.variable} ${federo.variable}`}>

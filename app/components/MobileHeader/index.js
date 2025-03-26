@@ -2,18 +2,19 @@
 
 // import cavaleLogo from '@/public/images/cavale_logo.svg'
 import gsap from "gsap";
-import { useLayoutEffect, useRef} from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useMenuContext } from '@/providers/menuContext/menuContext';
 // import { memo } from "react";
 import Image from 'next/image';
-import styles from './headerDesktop.module.css'
+import styles from './mobileHeader.module.css'
 import { Flip } from "gsap/Flip";
 import { useGSAP } from '@gsap/react';
+import Link from "next/link";
 
 gsap.registerPlugin(Flip);
 
 
-export default function HeaderDesktop() {
+export default function MobileHeader() {
 
     const { isMenuOpen, toggleMenu } = useMenuContext();
     const topBrandingDrawerRef = useRef()
@@ -21,7 +22,7 @@ export default function HeaderDesktop() {
     const burgerContainerRef = useRef()
     const hiddenBurgerContainerRef = useRef()
     const menuItemsContainerRef = useRef();
-    const desktopHeaderRef = useRef();
+    const mobileHeaderRef = useRef();
 
     const { contextSafe } = useGSAP();
 
@@ -43,40 +44,54 @@ export default function HeaderDesktop() {
 
     })
 
-    useGSAP(() => {
-           gsap.to(desktopHeaderRef.current, {
-                    opacity: 0},
-                    {
-                    opacity:1,
-                    duration: 1,
-                    ease: "power2.out",
-                    overwrite: "auto",
-                  });
-    })
+    // useGSAP(() => {
+    //        gsap.to(desktopHeaderRef.current, {
+    //                 opacity: 0},
+    //                 {
+    //                 opacity:1,
+    //                 duration: 1,
+    //                 ease: "power2.out",
+    //                 overwrite: "auto",
+    //               });
+    // })
 
     return (
         <>
-            <header className={styles.desktopHeader} ref={desktopHeaderRef} >
-                <div className={styles.headerContainer} >
-                    <div className={styles.burgerContainer} onClick={slideDrawer} ref={burgerContainerRef}>
-                        <svg className='icon' viewBox="0 0 100 80" width="30" height="30">
+            <header className={styles.mobileHeader} ref={mobileHeaderRef} >
+                <div className={styles.mobileHeaderContainer} >
+
+                    <div className={styles.mobileBrandingContainer} ref={topBrandingDrawerRef}>
+                        <div className={styles.logoImageContainer}>
+                            <img src="/images/cavallo_logo.svg" className={styles.cavalloLogoGoldMobile} alt='Luxe Cavallo Horse' >
+                            </img>
+                        </div>
+                        <p className={`${styles.mobileTitleLight}`}>LUXE CAVALLO</p>
+                    </div>
+                    <div className={styles.mobileBurgerContainer} onClick={slideDrawer} ref={burgerContainerRef}>
+
+                        <svg className='icon' viewBox="0 0 100 80" width="20" height="20">
                             <rect width="100" height="15" rx="10" />
                             <rect y="30" width="100" height="15" rx="10" />
                             <rect y="60" width="100" height="15" rx="10" />
                         </svg>
+
                         <p>
                             {isMenuOpen ? 'close' : 'open'}
                         </p>
                     </div>
-                    <div className={styles.brandingContainer} ref={topBrandingDrawerRef}>
-                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogoGold} alt='Luxe Cavallo Horse' >
-                        </img>
-                        <p className={`${styles.lightTitle} verticalText`}>LUXE CAVALLO</p>
-                    </div>
-
                 </div>
-                <div className={styles.overflowContainer} >
-                    <div className={styles.burgerContainerHidden} ref={hiddenBurgerContainerRef}>
+                <div className={styles.mobileOverflowContainer} >
+
+                    <div className={styles.mobileBrandingContainer} ref={overflowBrandingDrawerRef}>
+                        <div className={styles.logoImageContainer}>
+
+                            <img src="/images/cavallo_logo.svg" className={styles.cavalloLogoMobile} alt='Luxe Cavallo Horse' >
+                            </img>
+                        </div>
+
+                        <p className={styles.mobileTitleDark}>LUXE CAVALLO</p>
+                    </div>
+                    <div className={styles.mobileBurgerContainerHidden} ref={hiddenBurgerContainerRef}>
                         <svg className='icon' viewBox="0 0 100 80" width="30" height="30">
                             <rect width="100" height="15" rx="10" />
                             <rect y="30" width="100" height="15" rx="10" />
@@ -86,18 +101,14 @@ export default function HeaderDesktop() {
                             {isMenuOpen ? 'Close' : 'Open'}
                         </p>
                     </div>
-                    <div className={styles.brandingContainer} ref={overflowBrandingDrawerRef}>
-                        <img src="/images/cavallo_logo.svg" className={styles.cavalloLogo} alt='Luxe Cavallo Horse' >
-                        </img>
-
-                        <p className={`${styles.darkTitle} verticalText`}>LUXE CAVALLO</p>
-                    </div>
                 </div>
 
-                <div className={styles.menuItems} ref={menuItemsContainerRef}>
-                    <div className={styles.menuList}>
+                <div className={styles.mobileMenuItems} ref={menuItemsContainerRef}>
+                    <div className={styles.mobileMenuList}>
                         <ul>
-                            <li>home</li>
+                            <li>
+                                <Link href="/" className={styles.fullWidthLink}>home</Link>
+                            </li>
                             <li>men</li>
                             <li>women</li>
                             <li>accessories</li>
