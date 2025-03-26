@@ -1,9 +1,3 @@
-.burgerOpen {
-    order: 2;
-    left: -10px;
-    position: relative;
-}
-
 .cavalloLogoGoldMobile {
     display: block;
     filter: invert(90%) sepia(71%) saturate(1219%) hue-rotate(310deg) brightness(114%) contrast(106%);
@@ -11,16 +5,6 @@
 
 }
 
-.cavalloLogoMobile {
-    display: block;
-    position: relative;
-}
-
-
-.drawerOpen {
-    order: 1;
-    left: -20px;
-}
 
 .fullWidthLink {
     display: block;
@@ -36,35 +20,42 @@
     }
 }
 
-.menuItems {
+.mobileMenuItems {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
     background-color: var(--goldBackground);
     color: var(--lightText);
     width: 100dvw;
-    height: 100px;
+
 }
 
-.menuList {
-    width: 100dvw;
+.mobileMenuList:nth-child(2) {
+    border-top: solid 1px var(--darkText);
+}
 
+.mobileMenuList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     & ul {
         list-style-type: none;
         width: 100%;
-        margin: .5em 0 .5em 0;
         display:flex;
         flex-direction:row;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
 
         & li {
-            /* margin: .5em 0; */
-            width: 100%;
-            padding: .5em 0 .5em 1em;
+
+            padding: .5em ;
             transition: all 1s;
         }
 
@@ -75,16 +66,6 @@
     }
 }
 
-.menuOpen {
-    top: 200px;
-}
-
-
-.mobileMenuList {
-    display: flex;
-    justify-content: center;
-}
-
 .mobileBrandingContainer {
     width:85%;
     position: relative;
@@ -93,7 +74,7 @@
     align-items: center;
     justify-content: center;
     gap: 2em;
-    top:50px;  
+
 }
 
 .mobileBurgerContainer {
@@ -108,17 +89,6 @@
         font-size: .6em;
     }
 }
-
-.mobileBurgerContainerHidden {
-    width: 40px;
-    visibility: hidden;
-    order: 1;
-
-}
-
-
-
-
 
 
 .mobileHeader {
@@ -142,18 +112,6 @@
     background: var(--darkBackground);
 }
  
-
-.mobileOverflowContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100px;
-    width: 100dvw;
-    display: flex;
-    justify-content: space-around;
-    padding: 1em 0 1em 0;
-
-}
 
 .mobileTitleLight {
     font-family: var(--font-federo);
