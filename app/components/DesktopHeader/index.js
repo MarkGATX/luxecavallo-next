@@ -1,18 +1,14 @@
 'use client'
 
-// import cavaleLogo from '@/public/images/cavale_logo.svg'
 import gsap from "gsap";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { useMenuContext } from '@/providers/menuContext/menuContext';
-// import { memo } from "react";
-// import Image from 'next/image';
 import styles from './desktopHeader.module.css'
 import { Flip } from "gsap/Flip";
 import { useGSAP } from '@gsap/react';
 import Link from "next/link";
 
 gsap.registerPlugin(Flip);
-
 
 export default function DesktopHeader() {
 
@@ -43,17 +39,6 @@ export default function DesktopHeader() {
         timeline.add(Flip.from(menuItemsContainerState, { duration: 0.5 }), "start");
 
     })
-
-    // useGSAP(() => {
-    //        gsap.to(desktopHeaderRef.current, {
-    //                 opacity: 0},
-    //                 {
-    //                 opacity:1,
-    //                 duration: 1,
-    //                 ease: "power2.out",
-    //                 overwrite: "auto",
-    //               });
-    // })
 
     return (
         <>
@@ -99,12 +84,20 @@ export default function DesktopHeader() {
                     <div className={styles.menuList}>
                         <ul>
                             <li>
-                                <Link href="/" className={styles.fullWidthLink}>home</Link>
+                                <Link href="/" className={styles.fullWidthLink} onClick={slideDrawer}>home</Link>
                             </li>
-                            <li>men</li>
-                            <li>women</li>
-                            <li>accessories</li>
-                            <li>houseware</li>
+                            <li>
+                                <Link href="/men" className={styles.fullWidthLink} onClick={slideDrawer}>men</Link>
+                            </li>
+                            <li>
+                                <Link href="/women" className={styles.fullWidthLink} onClick={slideDrawer}>women</Link>
+                            </li>
+                            <li>
+                                <Link href="/accessories" className={styles.fullWidthLink} onClick={slideDrawer}>accessories</Link>
+                            </li>
+                            <li>
+                                <Link href="/housewares" className={styles.fullWidthLink} onClick={slideDrawer}>houseware</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className={styles.menuList}>

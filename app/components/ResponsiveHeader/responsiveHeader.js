@@ -4,8 +4,8 @@ import { useScreenSizeContext } from '@/providers/screenSizeContext/screenSizeCo
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 
-const DesktopHeader = dynamic(() => import('../DesktopHeader'));
-const HeaderMobile = dynamic(() => import('../MobileHeader'));
+const DesktopHeader = dynamic(() => import('../DesktopHeader'), { ssr: false });
+const HeaderMobile = dynamic(() => import('../MobileHeader'), { ssr: false });
 
 export default function ResponsiveHeader({ onLoad }) {
     const { isDesktop } = useScreenSizeContext();

@@ -5,7 +5,7 @@ import { QUERY_MENS } from '../../utils/queries';
 import ProductList from "../ProductList";
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import mensHeader from '../../images/menswear_header.jpg'
-import Image from 'mui-image';
+
 import { SizeContext } from "../../utils/sizeContext";
 import { useContext } from 'react';
 import { MenuContext } from '../../utils/menuContext';

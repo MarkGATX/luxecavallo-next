@@ -28,6 +28,8 @@ body {
 body {
   color: var(--darkText);
   background: var(--lightBackground);
+  display:flex;
+  flex-direction:column; /* for mobile */
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,5 +65,10 @@ header {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media (width >= 1024px) {
+  body {
+    flex-direction:row;
   }
 }
