@@ -13,6 +13,7 @@ export default function ProductList({ params }) {
       houseware:QUERY_HOUSEWARE,
       accessories: QUERY_ACCESSORY
     }
+    console.log(queryMaps[productType])
 
     const {data} = useSuspenseQuery(queryMaps[productType])
     console.log(data)
@@ -22,6 +23,7 @@ export default function ProductList({ params }) {
         <main>
             <div className='productHeader'>
                 <p>test {`${productType}`}</p>
+                <p>{`query ${queryMaps[productType]}`}</p>
             </div>
             <div className='productLists'>
 

@@ -1,5 +1,5 @@
-const db = require('./connection');
-const { Accessory, Houseware, Mens, Womens } = require('../models');
+const db = require('./connection').default;
+const { Accessory, Houseware, Mens, Womens } = require('../models').default;
 
 const accessoryData = require('../seeds/accessoryData.json');
 const housewareData = require('../seeds/housewareData.json');

@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const womensSchema = new Schema(
     {
@@ -31,14 +31,14 @@ const womensSchema = new Schema(
             required: true
         },
         attribution: {
-            type:String,
+            type: String,
         },
         care: {
-            type:String,
+            type: String,
         }
     }
 );
 
 const Womens = model('Womens', womensSchema);
 
-module.exports = Womens;
+export default Womens;

@@ -1,30 +1,30 @@
-const { Schema, model } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const accessorySchema = new Schema(
     {
         name: {
-            type:String,
-            required:true,
-            trim:true,
+            type: String,
+            required: true,
+            trim: true,
         },
         price: {
-                type:Number,
-                required:true,
-            },
+            type: Number,
+            required: true,
+        },
         description: {
-            type:String,
-            required:true,
+            type: String,
+            required: true,
         },
         stock: {
-            type:Number,
-            required:true,
+            type: Number,
+            required: true,
         },
         imageURL: {
-            type:String,
-            required:true
+            type: String,
+            required: true
         },
         attribution: {
-            type:String,
+            type: String,
         },
         category: {
             type: String,
@@ -34,4 +34,4 @@ const accessorySchema = new Schema(
 
 const Accessory = model('Accessory', accessorySchema);
 
-module.exports = Accessory;
+export default Accessory;

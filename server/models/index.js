@@ -1,6 +1,6 @@
-const Mens = require('./Mens').default;
-const Womens = require('./Womens');
-const Accessory = require('./Accessory');
-const Houseware = require('./Houseware');
+import Mens from './Mens';
+import Womens from './Womens';
+import Accessory from './Accessory';
+import Houseware from './Houseware';
 
-module.exports = { Mens, Womens, Accessory, Houseware };
+export default { Mens, Womens, Accessory, Houseware };
